@@ -28,7 +28,8 @@ El proyecto lo estamos laborando para ofrecerle una solución a la empresa Diver
 
 Crear una página web con su respetiva tienda virtual dando a conocer los
 productos como lo son parques infantiles metalizados, en madera, 
-biosaludables y demás productos fabricados por Diverpark.
+biosaludables fabricados por Diverpark y los servicios que ellos ofrecen 
+como lo son la instalación y mantenimiento de los productos.
 
 ### **PLANTAMIENTO DEL PROYECTO**
 
