@@ -99,4 +99,14 @@ values
 (0005, 'Boyaca', 'Tunja', 'cll. 32# 97-64 sur', '2019-12-31', 0005 ),
 (0006, 'Tolima', 'Melgar', 'calle. 02 este# 67-63', '2019-07-04', 0006 );
 
+insert into servidor_correo
+values
+(1, 'gmail.com'),
+(2, 'outlok.com');
+
+insert into error
+values
+(001, 'no muesra opcion ciudad', 'iu dfsujdsfghadf kdfkgsjfs  drjhedrhajf fdidfi'),
+(002, 'no cabe numero de telefono', 'iu dfsujdsfghadf kdfkgsjfs  drjhedrhajf fdidfi');
+
 -- select * from envio;
