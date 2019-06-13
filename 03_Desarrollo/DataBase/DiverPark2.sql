@@ -151,15 +151,15 @@ create table mantenimiento_parque
 
 create table error 
 (
-	id_error varchar(10),
-    nombre_error varchar (20),
-	descripcion varchar (10)
+	id_error int auto_increment primary key,
+    nombre_error varchar (50),
+	descripcion varchar (100)
 );
 
 
 create table servidor_correo
 (
-	id_serv_correo varchar (10),
+	id_serv_correo int,
     nombre_serv_correo varchar (30)
 );
 
