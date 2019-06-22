@@ -80,7 +80,8 @@ create table factura
     total float  not null, 
     fecha datetime not null,
 	fk_id_tpago int,
-    fk_id_producto int
+    fk_id_producto int,
+    fk_numero_documento varchar(25)
 );
 
 
@@ -185,7 +186,7 @@ alter table servicio add constraint foreign key (fk_id_producto) references tipo
 
 -- tipo_pago- factura  definen las  llaves primaria y foranea de la tabla 
 alter table factura add constraint foreign key (fk_id_tpago) references tipo_pago (id_tpago);
-
+alter table factura add constraint foreign key (fk_numero_documento) references usuario (numero_documento);
 
 -- tarjeta_credito  definen las  llaves primaria y foranea de la tabla 
 ALTER TABLE tarjeta_credito ADD primary key (id_tarjeta_c);
