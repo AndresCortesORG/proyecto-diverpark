@@ -38,7 +38,7 @@ create table rol
 create table tipo_producto
 (
 	id_producto int primary key,
-    nombre_producto varchar (25) not null,
+    nomb_producto varchar (25) not null,
     imagen_park blob,
     tamaño varchar(30) not null,
     descripcion varchar(100) not null,
@@ -46,7 +46,7 @@ create table tipo_producto
     fk_id_numero_documento varchar (25),
     fk2_id_tipodoc varchar (10)
     );
-    
+   
     
     create table servicio
 (
@@ -80,7 +80,7 @@ create table factura
     total float  not null, 
     fecha datetime not null,
 	fk_id_tpago int,
-    fk_id_producto int,
+    fk2_id_producto int,
     fk_numero_documento varchar(25)
 );
 
@@ -179,14 +179,14 @@ ALTER TABLE usuario ADD constraint FOREIGN KEY (fk_id_rol)REFERENCES rol(id_rol)
 alter table tipo_producto  add constraint foreign key (fk_id_numero_documento,fk2_id_tipodoc) references usuario(numero_documento,fk_id_tipodoc );
 
 --  - factura - tipo producto  define las  llaves  foraneas de la tabla 
-alter table factura add constraint foreign key (fk_id_producto) references tipo_producto(id_producto);
+alter table factura add constraint foreign key (fk2_id_producto) references tipo_producto(id_producto);
+alter table factura add constraint foreign key (fk_numero_documento) references usuario (numero_documento);
 
 --  - servicio - tipo producto   define las  llaves  foraneas de la tabla 
 alter table servicio add constraint foreign key (fk_id_producto) references tipo_producto(id_producto);
 
 -- tipo_pago- factura  definen las  llaves primaria y foranea de la tabla 
 alter table factura add constraint foreign key (fk_id_tpago) references tipo_pago (id_tpago);
-alter table factura add constraint foreign key (fk_numero_documento) references usuario (numero_documento);
 
 -- tarjeta_credito  definen las  llaves primaria y foranea de la tabla 
 ALTER TABLE tarjeta_credito ADD primary key (id_tarjeta_c);
