@@ -202,4 +202,3 @@ ALTER TABLE giro_empresarial ADD constraint FOREIGN KEY (fk_id_tpago) references
 
 -- envio definen las  llaves primaria y foranea de la tabla
 ALTER TABLE envio ADD constraint FOREIGN KEY (fk_id_factura)REFERENCES factura(id_factura);
-
