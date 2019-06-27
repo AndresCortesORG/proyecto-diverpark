@@ -1,4 +1,3 @@
-
 create database diverpark;
 use diverpark;
 
