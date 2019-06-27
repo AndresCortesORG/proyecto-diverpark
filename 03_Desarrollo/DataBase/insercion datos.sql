@@ -39,10 +39,10 @@ values
 
 insert into tipo_producto
 values
-(01,'Parques de madera', null, '25 * 5 *8', 'thjuf ebdfbddhgaau cfhhudr', 1.000000,'jng614693', '4'),
-(02,'Parques Metalicos', null, '20 *5 * 5 *8', 'thjuf ebdfbddhgaau cfhhudr', 2.001000,'e-25614965','3'),
-(03,'Parques Biosaludables', null, '10 * 5 *8 *8', 'uygtdfhffdds  vhgfdj  tf de frg jhgu ', 1.000000,'1065789076', '2'),
-(04,'Parques publicos', null, '5 * 5 *5 *5', 'thjuf ebdfbddhgaau cfhhudr', 1.465000,'1013654762','1');
+(01,'Parques de madera', null, '25 * 5 *8', 'thjuf ebdfbddhgaau cfhhudr', 1000000,'jng614693', '4'),
+(02,'Parques Metalicos', null, '20 *5 * 5 *8', 'thjuf ebdfbddhgaau cfhhudr', 2001000,'e-25614965','3'),
+(03,'Parques Biosaludables', null, '10 * 5 *8 *8', 'uygtdfhffdds  vhgfdj  tf de frg jhgu ', 1000000,'1065789076', '2'),
+(04,'Parques publicos', null, '5 * 5 *5 *5', 'thjuf ebdfbddhgaau cfhhudr', 1465000,'1013654762','1');
 
 insert into servicio 
 values
@@ -58,13 +58,13 @@ values
 
 insert into factura
 values
-(0001, 'p-02','Parques Metalicos', 3, 1805.000, 205.000, 5415.000, 6300.000, '2019-08-31 16:19:59', 01, 02, '1013614965'),
-(0002, 'p-02','Parques Metalicos', 1, 1805.000, 205.000, 1805.000, 2001.000, '2020-02-11 17:19:59', 01, 02,'1030525932'),
-(0003, 'p-01','Parques de madera', 2, 910.000, 90.000, 1810.000, 2000.000, '2019-08-31 06:19:59', 03, 01, '39665219'),
-(0004, 'p-03','Parques Biosaludables', 2, 950.000, 50.000, 1900.000, 2000.000, '2019-08-31 10:19:59', 03, 03, 'jng614693'),
-(0005, 'p-01','Parques de madera', 4, 910.000, 90.000, 3640.000, 4000.000, '2019-08-31 10:19:59', 02, 01,'1013414265'),
-(0006, 'p-01','Parques de madera', 4, 910.000, 90.000, 3600.000, 4000.000, '2019-08-31 10:19:59', 01, 01, '1013724962'),
-(0007, 'p-04','Parques publicos', 1, 960.000, 40.000, 960.000, 1000.000, '2019-07-18 11:12:42', 02, 04,'39665219');
+(0001, 'p-02','Parques Metalicos', 3, 1805000, 205000, 5415000, 6300000, '2019-08-31 16:19:59', 01, 02, '1013614965'),
+(0002, 'p-02','Parques Metalicos', 1, 1805000, 205000, 1805000, 2001000, '2020-02-11 17:19:59', 01, 02,'1030525932'),
+(0003, 'p-01','Parques de madera', 2, 910000, 90000, 1810000, 2000000, '2019-08-31 06:19:59', 03, 01, '39665219'),
+(0004, 'p-03','Parques Biosaludables', 2, 950000, 50000, 1900000, 2000000, '2019-08-31 10:19:59', 03, 03, 'jng614693'),
+(0005, 'p-01','Parques de madera', 4, 910000, 90000, 3640000, 4000000, '2019-08-31 10:19:59', 02, 01,'1013414265'),
+(0006, 'p-01','Parques de madera', 4, 910000, 90000, 3600000, 4000000, '2019-08-31 10:19:59', 01, 01, '1013724962'),
+(0007, 'p-04','Parques publicos', 1, 960000, 40000, 960000, 1000000, '2019-07-18 11:12:42', 02, 04,'39665219');
 
 
 insert into tarjeta_credito
