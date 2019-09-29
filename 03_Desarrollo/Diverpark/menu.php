@@ -13,7 +13,7 @@
 <header>
      <nav class="navegacion">
          <ul class="menu">
-             <li><a href="#">Inicio</a></li>
+             <li><a href="idex.php">Inicio</a></li>
              <li><a href="nuestraempresa.php">Nuestra Empresa</a><ul>
                     <li><a href="nuestraempresa.php">Nuestra Empresa</a></li>
 
