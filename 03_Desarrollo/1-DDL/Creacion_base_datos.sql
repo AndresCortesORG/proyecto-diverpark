@@ -34,6 +34,14 @@ create table rol
     descripcion varchar(150)
 );
 
+create table rol_usuario
+(
+	fk_id_rol_usuario varchar(10) primary key,
+    fk_numero_documento varchar (25),
+    fk_tipodoc_ndoc varchar (10),
+    estado_rol varchar (22)
+);
+
 create table tipo_producto
 (
 	id_producto int primary key,
@@ -45,7 +53,14 @@ create table tipo_producto
     fk_id_numero_documento varchar (25),
     fk2_id_tipodoc varchar (10)
     );
-   
+
+create table categoria
+(
+	id_categoria integer primary key,
+    nombre_categoria varchar(50),
+    descripcion varchar(250),
+    fk_id_tproducto int
+);
     
     create table servicio
 (
@@ -54,6 +69,7 @@ create table tipo_producto
 	fecha date not null,
     direccion varchar (25) not null,
 	observacion varchar (150),
+    calificacion integer(10) not null,
     fk_id_producto int
 );
 
@@ -163,6 +179,8 @@ create table servidor_correo
     nombre_serv_correo varchar (30)
 );
 
+
+
 -- =================== AGREGAR LLAVES PRIMARIAS FORANEAS Y RELACIONES================
 
 -- se definen llaves primarias de tipo_documento y usuario, tambien foranea usuario -tipo_documento
@@ -176,6 +194,9 @@ ALTER TABLE usuario ADD constraint FOREIGN KEY (fk_id_rol)REFERENCES rol(id_rol)
 
 --  - tipo_producto   define las  llaves  foraneas de la tabla 
 alter table tipo_producto  add constraint foreign key (fk_id_numero_documento,fk2_id_tipodoc) references usuario(numero_documento,fk_id_tipodoc );
+
+--  - categoria   define las  llaves  foraneas de la tabla 
+alter table categoria  add constraint foreign key (fk_id_tproducto) references tipo_producto(id_producto);
 
 --  - factura - tipo producto  define las  llaves  foraneas de la tabla 
 alter table factura add constraint foreign key (fk2_id_producto) references tipo_producto(id_producto);

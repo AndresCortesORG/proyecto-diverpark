@@ -46,8 +46,8 @@ values
 
 insert into servicio 
 values
-(01, 'instalacion de parques','2019-03-31', 'cra. 21 sur# 67-79','  ',02),
-(02, 'mantenimiento de parques','2019-03-31', 'cra. 21 sur# 67-79','',03);
+(01, 'instalacion de parques','2019-03-31', 'cra. 21 sur# 67-79','',5,02),
+(02, 'mantenimiento de parques','2019-03-31', 'cra. 21 sur# 67-79','',4,03);
 
 
 insert into tipo_pago
