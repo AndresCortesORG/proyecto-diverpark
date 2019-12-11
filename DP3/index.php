@@ -6,11 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>DiverPark</title>
-  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="assets/estilos.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
 </head>
 
 <body class="hidden">
+
+
+
   <div class="centrado" id="onload">
     <div class="lds-facebook">
       <div></div>
@@ -41,6 +44,18 @@
       <h2>Agencia de parques de diversión</h2>
     </div>
   </header>
+  <?php if(!empty($_SESSION)): ?> 
+      <br>Bienvenido. <?= $user['nombre']; ?> 
+      <br> Has iniciado sesión correctamente
+      <a href="logout.php">Salir</a>
+
+
+
+
+    
+
+
+
   <main>
     <section class="about" id="servicio">
       <div class="contenedor">
@@ -187,6 +202,13 @@
       </div>
     </section>
   </main>
+
+  <?php else: ?>
+      <h1>Ingrese o registrese</h1> 
+
+      <a href="login.php">Iniciar sesion</a> o
+      <a href="insertar.php">Registrarse</a>
+    <?php endif; ?>
 
   <footer id="contacto">
     <?php
