@@ -1,28 +1,40 @@
 <?php
   session_start();
- 
-  require 'conexion.php';
+ require 'conexion.php';
+//   $email = $_POST['email'];
+//   $password = $_POST['password'];
 
-    if (!empty($_POST['email']) && !empty($_POST['password'])) {
-      $records = $conexion->prepare('SELECT * FROM usuario WHERE email = :email');
-      $records->bindParam(':email', $_POST['email']);
-      $records->execute();
-      $resultado = $records->fetch(PDO::FETCH_ASSOC);
-      
-      $message = '';
-      // $message = password_verify($_POST['password'], $resultado['password']);
   
-      //print_r(' hol');die;
-       
-      if (count($resultado) > 0 && password_verify($_POST['password'], $resultado['password'])) {
-      
-        $_SESSION['user_id'] = $resultado['numero_documento'];
-        header("Location: index.php");
-      } 
-      else {
-        $message = 'Error, usuario y contraseña no coinciden';
-      }
-    }
+
+//   $cosulta = "SELECT * FROM usuario WHERE email = '$email' and password = '$password'";
+//   $resultado = mysqli_query($conexion, $consulta);
+
+// $filas = mysqli_num_rows($resultado);
+// if ($filas>0) {
+//   header("location: index.php");
+// }
+// else{
+//   echo "Error, usuario y contraseña no coinciden";
+// }
+// mysqli_free_result($resultado);
+// mysqli_close($conexion);
+
+ if (!empty($_POST['email']) && !empty($_POST['password'])) {
+   $records = $conexion->prepare('SELECT * FROM usuario WHERE email = :email');
+   $records->bindParam(':email', $_POST['email']);
+   $records->execute();
+   $resultado = $records->fetch(PDO::FETCH_ASSOC);
+   $message = '';
+   //$message = password_verify($_POST['password'], $resultado['password']);
+   //print_r(' hol');die; 
+   if (count($resultado) > 0 && password_verify($_POST['password'], $resultado['password'])) {
+     $_SESSION['user_id'] = $resultado['numero_documento'];
+     header("Location: index.php");
+   } 
+   else {
+     $message = 'Error, usuario y contraseña no coinciden';
+   }
+ }
   
 ?>
 
@@ -45,8 +57,8 @@
     <span>o <a href="insertar.php">Registrarse</a></span>
 
     <form action="login.php" method="POST">
-      <input name="email" type="text" placeholder="ingrese@usuario.com">
-      <input name="password" type="password" placeholder="Contraseña">
+      <input type="text" name="email" placeholder="ingrese@usuario.com">
+      <input type="password" name="password" placeholder="Contraseña">
       <input type="submit" value="Enviar">
     </form>
   </body>

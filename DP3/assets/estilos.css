@@ -329,7 +329,7 @@ nav .enlaces a:hover {
 
 /* Footer */
 
-footer {
+/* footer {
   background: url(img/teclado.jpg);
 }
 
@@ -356,7 +356,7 @@ footer {
 
 footer p {
   margin-top: var(--espacios);
-}
+} */
 
 @media screen and (max-width: 700px) {
   .nav2 {
