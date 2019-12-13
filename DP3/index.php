@@ -1,4 +1,33 @@
+<?php
+session_start();
 
+    require 'conexion.php';
+
+
+    if (isset($_SESSION['user_id'])) {
+        $records = $conexion->prepare('SELECT *  FROM usuario WHERE numero_documento = :numero_documento');
+        $records->bindParam(':numero_documento', $_SESSION['user_id']);
+        $records->execute();
+        $resultado = $records->fetch(PDO::FETCH_ASSOC);
+    
+        $user = null;
+    
+        if (count($resultado) > 0) {
+          $user = $resultado;
+        }
+      }
+
+    $sentencia_select =$conexion->prepare('SELECT *FROM usuario ORDER BY numero_documento asc');
+	$sentencia_select->execute();
+    $resultado=$sentencia_select->fetchAll();
+    if (isset($_POST['btn_buscar'])) {
+        $buscar_text = $_POST['buscar'];
+        $select_buscar = $conexion -> prepare('SELECT *FROM usuario WHERE primer_nombre LIKE :campo OR primer_apellido LIKE :campo;');
+        $select_buscar -> execute (array('campo'=> "%".$buscar_text. "%"));
+        $resultado= $select_buscar -> fetchAll();
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,12 +77,9 @@
   </header>
 
 
-  <!-- <?php //if(!empty($_SESSION)): ?>  -->
-      <!-- <br>Bienvenido. <?= $user['nombre']; ?>  -->
-      <!-- <br> Has iniciado sesión correctamente -->
-      <!-- <a href="logout.php">Salir</a> -->
 
-
+    <?php if(!empty($_SESSION)): ?> 
+      <a href="logout.php">Salir</a>
 
 
 
@@ -206,13 +232,13 @@
 
 
 
-  <?php// else: ?>
+  
+      <?php else: ?>
       <h1>Ingrese o registrese</h1> 
 
-      <!-- <a href="login.php" style="">Iniciar sesion</a> o -->
-      <!-- <a href="insertar.php">Registrarse</a> -->
-      <!-- <?php// endif; ?> -->
-
+      <a href="login.php">Iniciar sesion</a> o
+      <a href="insertar.php">Registrarse</a>
+    <?php endif; ?>
 
 
   <footer id="contacto">
