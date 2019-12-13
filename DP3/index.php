@@ -31,9 +31,9 @@
         </div>
         <div class="enlaces" id="enlaces">
           <a href="#" id="enlace-inicio" class="btn-header">Inicio</a>
-          <a href="#" id="enlace-servicio" class="btn-header">Nosotros</a>
-          <a href="#" id="enlace-trabajo" class="btn-header">Productos y Servicios</a>
-          <a href="#" id="enlace-equipo" class="btn-header">Equipo</a>
+          <a href="#" id="enlace-servicio" class="btn-header">Servicios</a>
+          <a href="#" id="enlace-trabajo" class="btn-header">Productos</a>
+          <a href="#" id="enlace-equipo" class="btn-header">Nuestra Empresa</a>
           <a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
         </div>
         <div class="icono" id="open">
@@ -46,15 +46,14 @@
       <h2>Agencia de parques de diversión</h2>
     </div>
   </header>
-  <?php if(!empty($_SESSION)): ?> 
-      <br>Bienvenido. <?= $user['nombre']; ?> 
-      <br> Has iniciado sesión correctamente
-      <a href="logout.php">Salir</a>
 
 
+  <!-- <?php //if(!empty($_SESSION)): ?>  -->
+      <!-- <br>Bienvenido. <?= $user['nombre']; ?>  -->
+      <!-- <br> Has iniciado sesión correctamente -->
+      <!-- <a href="logout.php">Salir</a> -->
 
 
-    
 
 
 
@@ -65,18 +64,18 @@
         <p class="after">Siempre mejorando para ti</p>
         <div class="servicios">
           <div class="caja-servicios">
-            <img src="img/heart.png" alt="" />
-            <h4>Creativos y asombrosos</h4>
+            <img src="img/diseño2.png.webp" alt="" />
+            <h4>Diseñamos</h4>
             <p>Lorem ipsum dolor sit amet consectetur.</p>
           </div>
           <div class="caja-servicios">
-            <img src="img/responsive.png" alt="" />
-            <h4>Creativos y asombrosos</h4>
+            <img src="img/construir1.jpg" alt="" />
+            <h4>Construimos</h4>
             <p>Lorem ipsum dolor sit amet consectetur.</p>
           </div>
           <div class="caja-servicios">
-            <img src="img/efectos.png" alt="" />
-            <h4>Creativos y asombrosos</h4>
+            <img src="img/reparamos1.png" alt="" />
+            <h4>Reparamos</h4>
             <p>Lorem ipsum dolor sit amet consectetur.</p>
           </div>
         </div>
@@ -87,35 +86,35 @@
       <p class="after">No solo hacemos parques, creamos felicidad</p>
       <div class="botones-work">
         <ul>
-          <li class="filter" data-nombre="todos">De madera</li>
+          <li class="filter" data-nombre="todos">Todos</li>
           <li class="filter" data-nombre="diseño">Metalicos</li>
-          <li class="filter" data-nombre="programacion">Infantiles</li>
+          <li class="filter" data-nombre="programacion">De madera</li>
           <li class="filter" data-nombre="marketing">Biosaludables</li>
         </ul>
       </div>
       <div class="galeria-work">
         <div class="cont-work programacion">
           <div class="img-work">
-            <img src="img/programacion1.jpeg" alt="" />
+            <img src="img/madera1.jpg" alt="" />
           </div>
           <div class="textos-work">
-            <h4>Programacion</h4>
+            <h4>Clasico</h4>
           </div>
         </div>
         <div class="cont-work programacion">
           <div class="img-work">
-            <img src="img/programacion2.jpeg" alt="" />
+            <img src="img/madera2.jpg" alt="" />
           </div>
           <div class="textos-work">
-            <h4>Programacion</h4>
+            <h4>Leon</h4>
           </div>
         </div>
         <div class="cont-work programacion">
           <div class="img-work">
-            <img src="img/programacion3.jpeg" alt="" />
+            <img src="img/madera3.jpg" alt="" />
           </div>
           <div class="textos-work">
-            <h4>Programacion</h4>
+            <h4>Con red</h4>
           </div>
         </div>
         <div class="cont-work diseño">
@@ -205,12 +204,16 @@
     </section>
   </main>
 
-  <?php else: ?>
+
+
+  <?php// else: ?>
       <h1>Ingrese o registrese</h1> 
 
-      <a href="login.php">Iniciar sesion</a> o
-      <a href="insertar.php">Registrarse</a>
-    <?php endif; ?>
+      <!-- <a href="login.php" style="">Iniciar sesion</a> o -->
+      <!-- <a href="insertar.php">Registrarse</a> -->
+      <!-- <?php// endif; ?> -->
+
+
 
   <footer id="contacto">
     <?php
