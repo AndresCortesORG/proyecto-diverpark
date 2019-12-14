@@ -57,9 +57,9 @@ session_start();
 
 
 
-    <?php if(!empty($_SESSION)): ?> 
+    <?php if(!empty($_SESSION)): ?>
+      <a href="registros.php">Usuarios registrados</a><br>
       <a href="logout.php">Salir</a>
-      
 
 
   <main>

@@ -4,20 +4,6 @@
 //   $email = $_POST['email'];
 //   $password = $_POST['password'];
 
-  
-
-//   $cosulta = "SELECT * FROM usuario WHERE email = '$email' and password = '$password'";
-//   $resultado = mysqli_query($conexion, $consulta);
-
-// $filas = mysqli_num_rows($resultado);
-// if ($filas>0) {
-//   header("location: index.php");
-// }
-// else{
-//   echo "Error, usuario y contraseña no coinciden";
-// }
-// mysqli_free_result($resultado);
-// mysqli_close($conexion);
 
  if (!empty($_POST['email']) && !empty($_POST['password'])) {
    $records = $conexion->prepare('SELECT * FROM usuario WHERE email = :email');
