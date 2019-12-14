@@ -30,46 +30,6 @@ $message = '';
  }
 
 
-// if (isset($_POST['guardar'])) {
-//     // $numero_documento = $_POST['numero_documento'];
-//     $tcdoc = $_POST['fk_id_tipodoc'];
-//     $nombre1 = $_POST['primer_nombre'];
-//     $nombre2 = $_POST['primer_nombre'];
-//     $apellido1 = $_POST['primer_apellido'];
-//     $apellido2 = $_POST['primer_apellido'];
-//     $direccion = $_POST['direccion'];
-//     $email = $_POST['email'];
-//     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-//     $password->bindParam(':password', $password);
-
-//     if (!empty($numero_documento) && !empty($nombre1) && !empty($nombre2) && !empty($apellido1) 
-//          && !empty($apellido2) && !empty($direccion) && !empty($email)) {
-//         if (!filter_var ($email, FILTER_VALIDATE_EMAIL)) {
-//             echo "<script>alert('correo no valido');</script>";
-//         }
-//         else {
-//             $consulta_insert = $conexion-> prepare ('INSERT into usuario (numero_documento, primer_nombre, segundo_nombre, 
-//             primer_apellido, segundo_apellido, direccion, email, password)) 
-//             VALUES(:numero_documento, :primer_nombre,:segundo_nombre,:primer_apellido, :segundo_apellido,:direccion,:email,:password)');
-//             $consulta_insert -> execute(array(
-//                 ':numero_documento' =>$numero_documento,
-//                 ':fk_id_tipodoc' => $tcdoc,
-//                 ':primer_nombre' =>$nombre1,
-//                 ':segundo_nombre' =>$nombre2,
-//                 ':primer_apellido' =>$apellido1,
-//                 ':segundo_apellido' =>$apellido2,
-//                 ':direccion' =>$direccion,
-//                 ':correo' =>$email,
-//                 ':password' =>$passwordc
-
-//             ));
-//             header('location: index.php');
-//         }
-//     }
-//     else {
-//         echo "<script> alert('Los campos estan vacios');</script>";
-//     }
-// }
 
 ?>
 <!DOCTYPE html>
