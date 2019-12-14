@@ -195,7 +195,7 @@ nav .enlaces a:hover {
 
 .contenedor h3 {
   font-size: var(--titulos);
-  color: var(--color4);
+  color: var(--color1);
   margin-bottom: var(--espacios);
 }
 

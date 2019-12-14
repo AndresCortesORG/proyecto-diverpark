@@ -4,28 +4,7 @@ session_start();
     require 'conexion.php';
 
 
-    if (isset($_SESSION['user_id'])) {
-        $records = $conexion->prepare('SELECT *  FROM usuario WHERE numero_documento = :numero_documento');
-        $records->bindParam(':numero_documento', $_SESSION['user_id']);
-        $records->execute();
-        $resultado = $records->fetch(PDO::FETCH_ASSOC);
-    
-        $user = null;
-    
-        if (count($resultado) > 0) {
-          $user = $resultado;
-        }
-      }
-
-    $sentencia_select =$conexion->prepare('SELECT *FROM usuario ORDER BY numero_documento asc');
-	$sentencia_select->execute();
-    $resultado=$sentencia_select->fetchAll();
-    if (isset($_POST['btn_buscar'])) {
-        $buscar_text = $_POST['buscar'];
-        $select_buscar = $conexion -> prepare('SELECT *FROM usuario WHERE primer_nombre LIKE :campo OR primer_apellido LIKE :campo;');
-        $select_buscar -> execute (array('campo'=> "%".$buscar_text. "%"));
-        $resultado= $select_buscar -> fetchAll();
-    }
+ 
 
 ?>
 
@@ -80,7 +59,7 @@ session_start();
 
     <?php if(!empty($_SESSION)): ?> 
       <a href="logout.php">Salir</a>
-
+      
 
 
   <main>
@@ -92,17 +71,17 @@ session_start();
           <div class="caja-servicios">
             <img src="img/diseño2.png.webp" alt="" />
             <h4>Diseñamos</h4>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Se diseña y crea cualquier tipo de parque.</p>
           </div>
           <div class="caja-servicios">
             <img src="img/construir1.jpg" alt="" />
             <h4>Construimos</h4>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Construimos, transportamos y instalamos sus parques</p>
           </div>
           <div class="caja-servicios">
             <img src="img/reparamos1.png" alt="" />
             <h4>Reparamos</h4>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Hacemos mantenimiento y reparaccion de parques</p>
           </div>
         </div>
       </div>
@@ -113,13 +92,41 @@ session_start();
       <div class="botones-work">
         <ul>
           <li class="filter" data-nombre="todos">Todos</li>
-          <li class="filter" data-nombre="diseño">Metalicos</li>
-          <li class="filter" data-nombre="programacion">De madera</li>
-          <li class="filter" data-nombre="marketing">Biosaludables</li>
+          <li class="filter" data-nombre="metalicos">Metalicos</li>
+          <li class="filter" data-nombre="madera">De madera</li>
+          <li class="filter" data-nombre="bio">Biosaludables</li>
         </ul>
       </div>
       <div class="galeria-work">
-        <div class="cont-work programacion">
+        
+
+        <div class="cont-work metalicos">
+          <div class="img-work">
+            <img src="img/metalicos1.jpg" alt="" />
+          </div>
+          <div class="textos-work">
+            <h4>Metalicos</h4>
+          </div>
+        </div>
+        <div class="cont-work metalicos">
+          <div class="img-work">
+            <img src="img/metalicos2.jpg" alt="" />
+          </div>
+          <div class="textos-work">
+            <h4>Metalicos</h4>
+          </div>
+        </div>
+        <div class="cont-work metalicos">
+          <div class="img-work">
+            <img src="img/metalicos3.jpg" alt="" />
+          </div>
+          <div class="textos-work">
+            <h4>Metalicos</h4>
+          </div>
+        </div>
+
+
+        <div class="cont-work madera">
           <div class="img-work">
             <img src="img/madera1.jpg" alt="" />
           </div>
@@ -127,7 +134,7 @@ session_start();
             <h4>Clasico</h4>
           </div>
         </div>
-        <div class="cont-work programacion">
+        <div class="cont-work madera">
           <div class="img-work">
             <img src="img/madera2.jpg" alt="" />
           </div>
@@ -135,7 +142,7 @@ session_start();
             <h4>Leon</h4>
           </div>
         </div>
-        <div class="cont-work programacion">
+        <div class="cont-work madera">
           <div class="img-work">
             <img src="img/madera3.jpg" alt="" />
           </div>
@@ -143,52 +150,30 @@ session_start();
             <h4>Con red</h4>
           </div>
         </div>
-        <div class="cont-work diseño">
+
+
+        <div class="cont-work bio">
           <div class="img-work">
-            <img src="img/diseño1.jpeg" alt="" />
+            <img src="img/biosaludables1.jpg" alt="" />
           </div>
           <div class="textos-work">
-            <h4>Diseño</h4>
+            <h4>Biosaludables</h4>
           </div>
         </div>
-        <div class="cont-work diseño">
+        <div class="cont-work bio">
           <div class="img-work">
-            <img src="img/diseño2.jpeg" alt="" />
+            <img src="img/biosaludables3.jpg" alt="" />
           </div>
           <div class="textos-work">
-            <h4>Diseño</h4>
+            <h4>Biosaludables</h4>
           </div>
         </div>
-        <div class="cont-work diseño">
+        <div class="cont-work bio">
           <div class="img-work">
-            <img src="img/diseño3.jpeg" alt="" />
+            <img src="img/biosaludables2.jpg" alt="" />
           </div>
           <div class="textos-work">
-            <h4>Diseño</h4>
-          </div>
-        </div>
-        <div class="cont-work marketing">
-          <div class="img-work">
-            <img src="img/marketing1.jpeg" alt="" />
-          </div>
-          <div class="textos-work">
-            <h4>Marketing</h4>
-          </div>
-        </div>
-        <div class="cont-work marketing">
-          <div class="img-work">
-            <img src="img/marketing2.jpeg" alt="" />
-          </div>
-          <div class="textos-work">
-            <h4>Marketing</h4>
-          </div>
-        </div>
-        <div class="cont-work marketing">
-          <div class="img-work">
-            <img src="img/marketing3.jpeg" alt="" />
-          </div>
-          <div class="textos-work">
-            <h4>Marketing</h4>
+            <h4>Biosaludables</h4>
           </div>
         </div>
       </div>
