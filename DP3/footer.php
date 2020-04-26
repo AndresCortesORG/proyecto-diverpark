@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="row2">
-                        <img src="icon/contact.png">
+                        <img src="icon/gmail.png">
                          <label>servicios@diverpark.com</label>
                     </div>
 
