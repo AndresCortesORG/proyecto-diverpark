@@ -22,23 +22,23 @@ create table usuario
     email VARCHAR (30) unique not null,
     contraseña VARCHAR(15) not null,
     telefono bigint not null,
-    fk_id_rol VARCHAR (10),
+    fk_id_rol int,
     fk_id_producto int
 );
 
 create table rol
 (
-    id_rol VARCHAR(10),
+    id_rol int primary key auto_increment,
     nombre_rol VARCHAR (25)  not null,
     descripcion varchar(150)
 );
 
 create table tipo_producto
 (
-	id_producto int primary key,
+	id_producto int primary key auto_increment,
     nomb_producto varchar (25) not null,
     imagen_park blob,
-    tamaño varchar(30) not null,
+    tamaño varchar(30),
     descripcion varchar(100) not null,
     precio float not null,
     fk_id_numero_documento varchar (25),
@@ -48,7 +48,7 @@ create table tipo_producto
     
     create table servicio
 (
-	id_servicio int primary key,
+	id_servicio int primary key auto_increment,
     nombre_servicio varchar (50) not null,
 	fecha date not null,
     direccion varchar (25) not null,
@@ -58,7 +58,7 @@ create table tipo_producto
 
 create table tipo_pago
 (
-    id_tpago int primary key,
+    id_tpago int primary key auto_increment,
     siglas varchar (5),
     nombre_tipo_pago VARCHAR(30)  not null
 	/*fk_id_tarjeta_c VARCHAR(10),
@@ -170,7 +170,7 @@ ALTER TABLE usuario ADD constraint FOREIGN KEY (fk_id_tipodoc)REFERENCES tipo_do
 ALTER TABLE usuario ADD primary key (numero_documento, fk_id_tipodoc);
 
 -- rol definen las  llaves primaria y foranea de la tabla 
-ALTER TABLE rol ADD primary key (id_rol);
+-- ALTER TABLE rol ADD primary key (id_rol);
 ALTER TABLE usuario ADD constraint FOREIGN KEY (fk_id_rol)REFERENCES rol(id_rol);
 
 --  - tipo_producto   define las  llaves  foraneas de la tabla 

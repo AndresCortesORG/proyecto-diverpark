@@ -18,9 +18,6 @@ session_start();
       }
 
 
-
-
-
     $sentencia_select =$conexion->prepare('SELECT *FROM usuario ORDER BY numero_documento asc');
 	$sentencia_select->execute();
     $resultado=$sentencia_select->fetchAll();
@@ -57,7 +54,9 @@ session_start();
                 <input type="text" name="buscar" placeholder="buscar nombre o apellidos" 
                 value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input_text">
                 <input type="submit" class="btn" name="btn_buscar" value="Buscar">
-                <a href="insertar.php" class="btn btn_nuevo">Nuevo</a>
+                <a href="insertar.php">
+                <button type="button" class="btn btn-success">Nuevo</button>
+                </a>
             </form>
         </div>
         
@@ -97,5 +96,7 @@ session_start();
       <a href="insertar.php">Registrarse</a>
     <?php endif; ?>
 
+
+    
 </body>
 </html>
