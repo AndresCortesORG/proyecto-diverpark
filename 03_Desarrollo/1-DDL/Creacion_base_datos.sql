@@ -7,7 +7,6 @@ create table tipo_documento
 	siglas VARCHAR(5)  not null,
 	nombre_tipo_doc VARCHAR(45)  not null
 );
-
 create table usuario
 (
     numero_documento varchar(25),
@@ -108,7 +107,7 @@ create table tarjeta_debito
     fk_id_tpago int
 );
 
-create table giro_empresarial
+create table giro_empresarial
 (
     id_giro int,
     nombre_titular varchar (25)not null,
@@ -201,3 +200,5 @@ ALTER TABLE giro_empresarial ADD constraint FOREIGN KEY (fk_id_tpago) references
 
 -- envio definen las  llaves primaria y foranea de la tabla
 ALTER TABLE envio ADD constraint FOREIGN KEY (fk_id_factura)REFERENCES factura(id_factura);
+
+select from * usuario;
